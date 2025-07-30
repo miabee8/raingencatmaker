@@ -45,9 +45,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
       - name: Package site for release
-        run: zip -r pixel-cat-maker.zip dist
+        run: zip -r raingencatmaker.zip dist
       - name: Release
         if: ${{ github.ref_name }}
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create ${{ github.ref_name }} ./pixel-cat-maker.zip
+        run: gh release create ${{ github.ref_name }} ./raingencatmaker.zip
